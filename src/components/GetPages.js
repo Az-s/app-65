@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar ,  Container} from 'react-bootstrap';
+import { Navbar ,  Container , Nav} from 'react-bootstrap';
 
 const GetPages = () => {
     return (
