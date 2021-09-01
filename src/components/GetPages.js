@@ -1,19 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar ,  Container , Nav} from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 
 const GetPages = () => {
+    const [pages, setPages] = useState();
+
+    useEffect(() => {
+        
+    }, [])
     return (
         <>
-            <Navbar bg="light" variant="light">
-                <Container>
-                    <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                    <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                    </Nav>
-                </Container>
-            </Navbar>
+            <Container className='d-flex justify-content-center'>
+                <Card className='mt-5'>
+                    <Card.Header>Quote</Card.Header>
+                    <Card.Body>
+                        <blockquote className="blockquote mb-0">
+                            <footer className="blockquote-footer pt-3">
+                                Someone famous in Source Title
+                            </footer>
+                            <p>
+                                {' '}
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+                                erat a ante.{' '}
+                            </p>
+                        </blockquote>
+                    </Card.Body>
+                </Card>
+            </Container>
         </>
     )
 }
