@@ -1,13 +1,16 @@
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
 import GetPages from './components/GetPages';
+import EditPages from './components/EditPages';
 import './App.css';
 
 const App = () => {
   return (
     <div className="App">
       <Router>
-
-      <GetPages />
+        <NavBar />
+        <Route path='/quotes/:name' component={GetPages} />
+        <Route path='/pages/admin' component={EditPages} />
       </Router>
     </div>
   );
