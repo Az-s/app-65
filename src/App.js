@@ -10,7 +10,7 @@ const App = () => {
       <Router>
         <NavBar />
         <Route path='/pages/:name' component={GetPages} />
-        <Route path='/pages/admin' component={EditPages} />
+        <Route path='/pages//admin' component={EditPages} />
       </Router>
     </div>
   );

@@ -16,7 +16,7 @@ const NavBar = () => {
                         <NavLink to='/pages/services' activeStyle={{ color: '#c6cacc' }} className='nav-link'>Services</NavLink>
                     </Nav>
                     <Nav>
-                        <NavLink to='/pages/admin' activeStyle={{ color: '#c6cacc' }} style={{ textDecoration: 'none', color: 'gray' }}>Admin</NavLink>
+                        <NavLink to='/pages//admin' activeStyle={{ color: '#c6cacc' }} style={{ textDecoration: 'none', color: 'gray' }}>Admin</NavLink>
                     </Nav>
                 </Container>
             </Navbar>
