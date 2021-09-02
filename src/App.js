@@ -9,7 +9,7 @@ const App = () => {
     <div className="App">
       <Router>
         <NavBar />
-        <Route path='/quotes/:name' component={GetPages} />
+        <Route path='/pages/:name' component={GetPages} />
         <Route path='/pages/admin' component={EditPages} />
       </Router>
     </div>
