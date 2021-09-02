@@ -25,8 +25,6 @@ const GetPages = ({ match }) => {
         fetchData().catch(console.error);
     }, [fetchData]);
 
-    console.log(pages)
-
     return (
         <>
             {pages.map(page => (
