@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { Container, Form, Button, Card } from 'react-bootstrap';
 // import { NavLink, Switch } from "react-router-dom";
 import axiosApi from '../axiosApi';
@@ -21,7 +21,7 @@ const EditPages = ({ history }) => {
 
     const [pageInfo, setPageInfo] = useState({});
 
-    const onInputChange = (e) => {
+    const onInputChange = async (e) => {
         const { name, value } = e.target;
         setEditPage(prev => ({
             ...prev,
@@ -30,32 +30,32 @@ const EditPages = ({ history }) => {
 
         if (name === 'category') {
 
-            const response = axiosApi.get('pages/' + value + '.json');
-            
+            // const respournse = axiosApi.get('pages/' + value + '.json');
+
             // const pageInfo = Object.keys(response.data).map(id => ({
             //     ...response.data[id],
             //     id,
             // }))
-
-            const pageInfo = response.data;
-
+            const response = await axiosApi.get('pages/' + value + '.json');
+            const pageInfo = Object.keys(response.data.title[0]).map(id => ({
+                ...response.data,
+                id,
+            }))
             setPageInfo(pageInfo);
+            console.log(pageInfo)
         }
-
     };
 
     const createPage = async (e) => {
         e.preventDefault();
 
         try {
-            await axiosApi.post('/pages/' + editPage.category +'.json', editPage);
+            await axiosApi.post('/pages/' + editPage.category + '.json', editPage);
             // await axiosApi.put('/pages/' + editPage.category +'.json', editPage); скрыл в комменте так как put запрос заменял все а не менял нужный
         } finally {
             history.replace('/pages/' + editPage.category);
         }
     };
-
-    console.log(pageInfo);
 
     return (
         <>
